@@ -60,6 +60,7 @@ function onButtonClick() {
     } catch (err) {
         if (err instanceof SentenceNotFoundError) {
             alert('Error: ' + err.message);
+            return;
         } else {
             throw err;
         }
