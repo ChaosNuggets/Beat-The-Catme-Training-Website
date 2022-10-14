@@ -28,9 +28,7 @@ function _calculateParagraphRatings(sentences, NUMBER_OF_QUESTIONS) {
     const paragraphRatings = new Array(NUMBER_OF_QUESTIONS).fill(0);
     for (const sentence of sentences) {
         if (!(sentence in data)) {
-            const errorMsg = `Error: sentence "${sentence}" could not be found in the data`;
-            alert(errorMsg);
-            throw errorMsg;
+            throw new SentenceNotFoundError(`sentence "${sentence}" could not be found in the data`);
         }
 
         // give the data names

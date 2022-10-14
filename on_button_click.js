@@ -55,7 +55,16 @@ function onButtonClick() {
     }
 
     // Get the answers
-    answers = calculateAnswers(descriptions);
+    try {
+        var answers = calculateAnswers(descriptions);
+    } catch (err) {
+        if (err instanceof SentenceNotFoundError) {
+            alert('Error: ' + err.message);
+        } else {
+            throw err;
+        }
+    }
+    
 
     // Save the answers
     localStorage.setItem('answers', JSON.stringify(answers));
