@@ -31,8 +31,6 @@ is my own original work.
 ===============================================================================
 */
 
-// let errorMsg; // TODO: create an error page
-
 function onButtonClick() {
     const descriptions = [
         document.getElementById("d1").value,
