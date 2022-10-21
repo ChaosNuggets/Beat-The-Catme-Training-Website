@@ -27,7 +27,11 @@
         const answers = JSON.parse(localStorage.getItem('answers'));
 
         for (let i = 0; i < answers.length; i++) {
-            document.getElementById(`ans${i + 1}`).innerHTML = answers[i];
+            if (answers[i] > 0) {
+                document.getElementById(`ans${i + 1}`).innerHTML = answers[i];
+            } else {
+                document.getElementById(`ans${i + 1}`).innerHTML = 'idk';
+            }
         }
 
         localStorage.clear();
